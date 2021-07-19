@@ -1,4 +1,4 @@
-import OpenSeadragon from 'openseadragon';
+import {newOpenSeadragon} from './osd';
 import React, {useEffect} from 'react';
 import './App.css';
 
@@ -11,12 +11,7 @@ const styles = {
 
 function App() {
   useEffect(() => {
-    OpenSeadragon({
-      id: 'osd-viewer',
-      prefixUrl: './images/',
-      tileSources: './tiles/tree1.dzi',
-      showNavigator: true,
-    });
+    newOpenSeadragon();
   });
 
   return (
