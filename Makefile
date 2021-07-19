@@ -20,7 +20,7 @@ $(PUBLIC_IMAGES_DIR):
 
 .PHONY: build
 build:
-	yarn build
+	PUBLIC_URL=/$(GCS_BUCKET_NAME) yarn build
 
 clear:
 	rm -rf $(BUILD_DIR)
