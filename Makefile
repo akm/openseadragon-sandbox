@@ -29,7 +29,11 @@ clear:
 rebuild: clear $(PUBLIC_IMAGES_DIR) $(PUBLIC_TILES_DIR_TREE1) build
 
 
-GCS_BUCKET_NAME=osd-viewer-example1
+GCS_BUCKET_NAME=osd-viewer-example2
+
+.PHONY: gcs-bucket
+gcs-bucket:
+	gsutil mb -p blocks-gn-akm -b on -c standard -l asia-northeast1 gs://$(GCS_BUCKET_NAME)
 
 .PHONY: deploy
 deploy:
