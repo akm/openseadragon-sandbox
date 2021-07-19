@@ -3,7 +3,11 @@
 SOURCE_FILE_TREE1=huge-images/TREE-9526x13134.png
 PUBLIC_TILES_DIR_TREE1=public/tiles/tree1
 
-$(PUBLIC_TILES_DIR_TREE1):
-	# https://github.com/dblock/dzt
-	# gem install dzt
-	dzt slice $(SOURCE_FILE_TREE1) --output=$(PUBLIC_TILES_DIR_TREE1)
+MAGICK_SLICER_DIR=tmp/MagickSlicer
+MAGICK_SLICER_BIN=$(MAGICK_SLICER_DIR)/magick-slicer.sh
+
+$(MAGICK_SLICER_BIN):
+	git clone https://github.com/VoidVolker/MagickSlicer.git $(MAGICK_SLICER_DIR)
+
+$(PUBLIC_TILES_DIR_TREE1): $(MAGICK_SLICER_BIN)
+	$(MAGICK_SLICER_BIN) -i $(SOURCE_FILE_TREE1) -o $(PUBLIC_TILES_DIR_TREE1)
