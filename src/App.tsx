@@ -13,8 +13,8 @@ function App() {
   useEffect(() => {
     OpenSeadragon({
       id: 'osd-viewer',
-      prefixUrl: '/images/',
-      tileSources: '/tiles/tree1.dzi',
+      prefixUrl: './images/',
+      tileSources: './tiles/tree1.dzi',
     });
   });
 
