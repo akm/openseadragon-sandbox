@@ -15,6 +15,7 @@ function App() {
       id: 'osd-viewer',
       prefixUrl: './images/',
       tileSources: './tiles/tree1.dzi',
+      showNavigator: true,
     });
   });
 
