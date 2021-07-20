@@ -18,8 +18,16 @@ SOURCE_IMAGES_DIR=node_modules/openseadragon/build/openseadragon/images
 $(PUBLIC_IMAGES_DIR):
 	cp -r $(SOURCE_IMAGES_DIR) $(PUBLIC_IMAGES_DIR)
 
+
+OSD_PLUGIN_DIR=src/osd/plugins
+OSD_PLUGIN_SVG_OVERLAY_REPO=https://github.com/openseadragon/svg-overlay.git
+OSD_PLUGIN_SVG_OVERLAY_DIR=$(OSD_PLUGIN_DIR)/svg-overlay
+
+$(OSD_PLUGIN_SVG_OVERLAY_DIR):
+	git clone $(OSD_PLUGIN_SVG_OVERLAY_REPO) $(OSD_PLUGIN_SVG_OVERLAY_DIR)
+
 .PHONY: build
-build:
+build: $(OSD_PLUGIN_SVG_OVERLAY_DIR)
 	PUBLIC_URL=/$(GCS_BUCKET_NAME) yarn build
 
 clear:
