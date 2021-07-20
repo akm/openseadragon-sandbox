@@ -21,10 +21,10 @@ function App() {
         return selection
           .append('rect')
           .style('fill', '#f00')
-          .attr('x', 0.5)
+          .attr('x', 0.35)
           .attr('width', 0.25)
           .attr('y', 0.5)
-          .attr('height', 0.25);
+          .attr('height', 0.125);
       },
     });
   });
