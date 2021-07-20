@@ -1,12 +1,7 @@
 const OpenSeadragon = require('openseadragon');
 
-const newOpenSeadragon = function () {
-  const viewer = OpenSeadragon({
-    id: 'osd-viewer',
-    prefixUrl: './images/',
-    tileSources: './tiles/tree1.dzi',
-    showNavigator: true,
-  });
+const newOpenSeadragon = function (options) {
+  const viewer = OpenSeadragon(options);
   return viewer;
 };
 

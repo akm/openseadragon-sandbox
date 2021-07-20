@@ -11,7 +11,12 @@ const styles = {
 
 function App() {
   useEffect(() => {
-    newOpenSeadragon();
+    newOpenSeadragon({
+      id: 'osd-viewer',
+      prefixUrl: './images/',
+      tileSources: './tiles/tree1.dzi',
+      showNavigator: true,
+    });
   });
 
   return (
