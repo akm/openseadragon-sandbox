@@ -1,4 +1,4 @@
-import {newOpenSeadragon} from './osd';
+import {newViewer} from './osd';
 import React, {useEffect} from 'react';
 import './App.css';
 
@@ -11,7 +11,7 @@ const styles = {
 
 function App() {
   useEffect(() => {
-    newOpenSeadragon({
+    newViewer({
       id: 'osd-viewer',
       prefixUrl: './images/',
       tileSources: './tiles/tree1.dzi',

@@ -1,8 +1,8 @@
 const OpenSeadragon = require('openseadragon');
 
-const newOpenSeadragon = function (options) {
+const newViewer = function (options) {
   const viewer = OpenSeadragon(options);
   return viewer;
 };
 
-module.exports = {newOpenSeadragon};
+module.exports = {newViewer};
