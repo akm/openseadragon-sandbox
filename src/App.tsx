@@ -12,7 +12,7 @@ const styles = {
 
 function App() {
   useEffect(() => {
-    newViewer({
+    const viewer = newViewer({
       id: 'osd-viewer',
       prefixUrl: './images/',
       tileSources: './tiles/tree1.dzi',
@@ -34,6 +34,9 @@ function App() {
           .attr('height', 0.125);
       },
       toolbarId: 'toolbar',
+    });
+    viewer.addHandler('canvas-click', event => {
+      console.log('canvas-click event.position', event.position);
     });
   });
 
