@@ -1549,6 +1549,11 @@
     preact "^10.5.13"
     tiny-emitter "^2.1.0"
 
+"@recogito/annotorious-toolbar@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@recogito/annotorious-toolbar/-/annotorious-toolbar-0.1.1.tgz#1f611efba323eb97d45e1ed55f2b6589b911340e"
+  integrity sha512-9SYR3AGurGB1YfAMvCXrPJ6oNbHgwQdB4U6avsfg9S90m2lllzTDwJRNUqJmvWzHiVG07EkMB7sq6299mfHJBw==
+
 "@recogito/annotorious@2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@recogito/annotorious/-/annotorious-2.5.1.tgz#c12f132e25bd76c6aefebfb8833b3c118016574e"
