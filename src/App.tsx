@@ -1,4 +1,4 @@
-import {newViewer} from './osd';
+import {newViewer, D3Selection} from './osd';
 import React, {useEffect} from 'react';
 import './App.css';
 
@@ -16,6 +16,16 @@ function App() {
       prefixUrl: './images/',
       tileSources: './tiles/tree1.dzi',
       showNavigator: true,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      d3Overlay: (selection: D3Selection): any => {
+        return selection
+          .append('rect')
+          .style('fill', '#f00')
+          .attr('x', 0.5)
+          .attr('width', 0.25)
+          .attr('y', 0.5)
+          .attr('height', 0.25);
+      },
     });
   });
 
