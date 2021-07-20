@@ -7,6 +7,7 @@ const styles = {
     width: '800px',
     height: '600px',
   },
+  toolbar: {},
 };
 
 function App() {
@@ -16,6 +17,12 @@ function App() {
       prefixUrl: './images/',
       tileSources: './tiles/tree1.dzi',
       showNavigator: true,
+      gestureSettingsTouch: {
+        pinchToZoom: true,
+      },
+      gestureSettingsMouse: {
+        clickToZoom: false,
+      },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       d3Overlay: (selection: D3Selection): any => {
         return selection
@@ -26,12 +33,14 @@ function App() {
           .attr('y', 0.5)
           .attr('height', 0.125);
       },
+      toolbarId: 'toolbar',
     });
   });
 
   return (
     <div className="App">
       <header className="App-header">
+        <div id="toolbar" style={styles.toolbar}></div>
         <div id="osd-viewer" style={styles.viewer}></div>
       </header>
     </div>
