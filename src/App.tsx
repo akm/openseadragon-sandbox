@@ -24,7 +24,7 @@ function App() {
         pinchToZoom: true,
       },
       gestureSettingsMouse: {
-        clickToZoom: false,
+        clickToZoom: true,
       },
       // // eslint-disable-next-line @typescript-eslint/no-explicit-any
       // d3Overlay: (selection: D3Selection): any => {
