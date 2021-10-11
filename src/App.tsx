@@ -1,4 +1,7 @@
-import {newViewer, D3Selection} from './osd';
+import {
+  newViewer,
+  // D3Selection
+} from './osd';
 import React, {useEffect} from 'react';
 import './App.css';
 
@@ -15,7 +18,7 @@ function App() {
     const viewer = newViewer({
       id: 'osd-viewer',
       prefixUrl: './images/',
-      tileSources: './tiles/tree1.dzi',
+      tileSources: './tiles/target.dzi',
       showNavigator: true,
       gestureSettingsTouch: {
         pinchToZoom: true,
@@ -23,16 +26,16 @@ function App() {
       gestureSettingsMouse: {
         clickToZoom: false,
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      d3Overlay: (selection: D3Selection): any => {
-        return selection
-          .append('rect')
-          .style('fill', '#f00')
-          .attr('x', 0.35)
-          .attr('width', 0.25)
-          .attr('y', 0.5)
-          .attr('height', 0.125);
-      },
+      // // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // d3Overlay: (selection: D3Selection): any => {
+      //   return selection
+      //     .append('rect')
+      //     .style('fill', '#f00')
+      //     .attr('x', 0.35)
+      //     .attr('width', 0.25)
+      //     .attr('y', 0.5)
+      //     .attr('height', 0.125);
+      // },
       toolbarId: 'toolbar',
     });
     viewer.addHandler('canvas-click', event => {
