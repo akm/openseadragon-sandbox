@@ -19,6 +19,7 @@ function App() {
       id: 'osd-viewer',
       prefixUrl: './images/',
       tileSources: './tiles/target.dzi',
+      defaultZoomLevel: 1,
       showNavigator: true,
       gestureSettingsTouch: {
         pinchToZoom: true,
@@ -38,8 +39,20 @@ function App() {
       // },
       toolbarId: 'toolbar',
     });
-    viewer.addHandler('canvas-click', event => {
-      console.log('canvas-click event.position', event.position);
+    viewer.addHandler('zoom', event => {
+      // console.log('zoom event', event);
+      const maxScale = 40;
+      const maxZoom = viewer.viewport.getMaxZoom();
+      const currentZoom = viewer.viewport.getZoom(false);
+      console.log('viewer zooms', {
+        // homeZoom: viewer.viewport.getHomeZoom(),
+        // minZoom: viewer.viewport.getMinZoom(),
+        // maxZoom,
+        // currentZoom,
+        // zoomFalse: viewer.viewport.getZoom(false),
+        dotByDot: (currentZoom / maxZoom) * 100,
+        scale: maxScale * (currentZoom / maxZoom),
+      });
     });
   });
 
