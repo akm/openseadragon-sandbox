@@ -1,4 +1,5 @@
 import OpenSeadragon from 'openseadragon';
+export const OpenSeadragon;
 import {Selection, GElement, OldDatum} from 'd3';
 
 export type D3Selection = Selection<GElement, OldDatum, null, undefined>;

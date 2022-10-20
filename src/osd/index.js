@@ -47,4 +47,4 @@ const newViewer = function (options) {
   return viewer;
 };
 
-module.exports = {newViewer};
+module.exports = {newViewer, OpenSeadragon};
